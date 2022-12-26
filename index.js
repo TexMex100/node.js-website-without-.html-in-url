@@ -19,37 +19,17 @@ router.get('/', function(req, res) {
 });
 app.use('/', router);
 
-router.get('/contact', function(req, res) {
-  res.sendFile(path.join(__dirname, '/www/contact.html'));
+router.get('/page', function(req, res) {
+  res.sendFile(path.join(__dirname, '/www/page.html'));
 });
-app.use('/contact', router);
-
-router.get('/terms-of-service', function(req, res) {
-  res.sendFile(path.join(__dirname, '/www/terms-of-service.html'));
-});
-app.use('/terms-of-service', router);
-
-router.get('/liveradio', function(req, res) {
-  res.sendFile(path.join(__dirname, '/www/liveradio.html'));
-});
-app.use('/liveradio', router);
-
-router.get('/discord', function(req, res) {
-  res.sendFile(path.join(__dirname, '/www/discord.html'));
-});
-app.use('/discord', router);
-
-router.get('/testpage', function(req, res) {
-  res.sendFile(path.join(__dirname, '/www/testpage.html'));
-});
-app.use('/testpage', router);
+app.use('/page', router);
 
 // errors
 app.use(function(req, res, next) {
   res.status(404);
-  res.sendFile(__dirname + '/www/404.html');
+  res.sendFile(__dirname + '/www/errors/404.html');
 });
 
 app.listen(port, () => {
-  console.log(`Main Website solomusic.tk On Port ${port} Online!`)
+  console.log(`Main Website (your website) On Port ${port} Online!`)
 });
